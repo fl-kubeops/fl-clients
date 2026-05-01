@@ -1,0 +1,17 @@
+# FL Client Configuration
+client:
+  local_epochs: 3
+  batch_size: 32
+  learning_rate: 0.01
+  optimizer: adam
+
+dataset:
+  type: simulated_iot
+  features: [temperature, vibration, pressure, energy_consumption]
+  num_samples_per_client: 1000
+  iid: false   # non-IID split to simulate real federated conditions
+
+privacy:
+  secure_aggregation: true
+  differential_privacy: false   # enable in later phase
+  noise_multiplier: 1.0
